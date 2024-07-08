@@ -1,0 +1,61 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .link {
+            display: block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Welcome to the Student Management System
+        </div>
+        <a href="{% url 'add_student' %}" class="link">Add New Student</a>
+        <a href="{% url 'student_list' %}" class="link">View Student List</a>
+    </div>
+</body>
+</html>
