@@ -1,28 +1,20 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import Student
-from .forms import StudentForm
+
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'students/index.html')
+
+def add_student(request):
+    # Logic for adding a student (e.g., handling form submission)
+    return render(request, 'students/student_form.html')
 
 def student_list(request):
-    students = Student.objects.all()
-    return render(request, 'students/student_list.html', {'students': students})
-
-def student_create(request):
-    if request.method == 'POST':
-        form = StudentForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('student_list')
-    else:
-        form = StudentForm()
-    return render(request, 'students/student_form.html', {'form': form})
-
-def student_update(request, pk):
-    student = get_object_or_404(Student, pk=pk)
-    if request.method == 'POST':
-        form = StudentForm(request.POST, instance=student)
-        if form.is_valid():
-            form.save()
-            return redirect('student_list')
-    else:
-        form = StudentForm(instance=student)
-    return render(request, 'students/student_form.html', {'form': form})
+    # Logic for retrieving and displaying the list of students
+    # For example, you might fetch data from a database here
+    students = [
+        {'name': 'John Doe', 'age': 20, 'grade': 'A'},
+        {'name': 'Jane Smith', 'age': 22, 'grade': 'B'},
+        # Add more student data as needed
+    ]
+    context = {'students': students}
+    return render(request, 'students/student_list.html', context)
