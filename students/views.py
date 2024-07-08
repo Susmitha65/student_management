@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Student
 from .forms import StudentForm
 
+def index(request):
+    return render(request, 'students/index.html')
+
 def student_list(request):
     students = Student.objects.all()
     return render(request, 'students/student_list.html', {'students': students})
