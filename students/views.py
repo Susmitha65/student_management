@@ -17,4 +17,8 @@ def student_list(request):
         # Add more student data as needed
     ]
     context = {'students': students}
+<<<<<<< HEAD
     return render(request, 'students/student_list.html', context)
+=======
+    return render(request, 'students/student_list.html', context)
+>>>>>>> origin/main
