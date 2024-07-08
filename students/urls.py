@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import student_list, student_create, student_update
+from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
